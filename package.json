@@ -1,0 +1,23 @@
+{
+  "name": "arbeiskrav1",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thuyho1502/arbeiskrav1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thuyho1502/arbeiskrav1/issues"
+  },
+  "homepage": "https://github.com/Thuyho1502/arbeiskrav1#readme",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

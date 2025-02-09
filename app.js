@@ -1,4 +1,5 @@
-//Del 1:
+
+ //Del 1:
 //1. Opprett en karakter
 const nameCharacter = document.getElementById("character-name");
 const hpCharacter = document.getElementById("character-hp");
@@ -13,31 +14,42 @@ profileImages.forEach(img => {
 
     });
 });
-function highlightSelectedImage(imageSrc){
+ function highlightSelectedImage(imageSrc){
     profileImages.forEach(img =>{
         img.style.border = img.src === imageSrc ? "3px solid red" : "3px solid yellow";
        });
-}
+}  
 
 //Lagre karakteren
+function createCharacter(name, hp, attack, image) {
+    return {
+        name: name.trim() || "Ukjent helt",
+        hp: parseInt(hp) || 100,
+        attack: parseInt(attack) || 10,
+        image: image || "assets/dragon.jpg"
+    };
+}
+//module.exports = {createCharacter} ;
+
+
 const createButton = document.getElementById("create-character");
 createButton.addEventListener("click",()=>{
-    const character = {
-        name: nameCharacter.value.trim() || "Ukjent helt",
-        hp: parseInt(hpCharacter.value) || 100,
-        attack: parseInt(attackDamage.value) || 10,
-        image:selectedImage || "assets/dragon.jpg"
-        
-    };
-      if(!nameCharacter.value.trim()){
+        if(!nameCharacter.value.trim()){
         alert("Skriv et navn for din karakter!");
         return;    
     }  
+    const character = createCharacter(
+        nameCharacter.value,
+        hpCharacter.value,
+        attackDamage.value,
+        selectedImage
+    );
     localStorage.setItem("character", JSON.stringify(character));
 
     console.log("Karakter opprettet:", character);
     alert(`Karakter ${character.name}er opprettet med ${character.hp} HP og ${character.attack} angrep!`);
-});
+}); 
+ 
 
 //Del 2
 // Funksjon for å generere en tilfeldig fiende
@@ -76,10 +88,12 @@ function generateEnemy() {
     document.getElementById("enemy-name").textContent = `Navn:${enemy.name}`;
     document.getElementById("enemy-hp").textContent= `HP:${enemy.hp}`;
     document.getElementById("enemy-attack").textContent = `Angrep: ${enemy.attack}`;
-    
+    module.exports = {generateEnemy};
 }
+
 document.getElementById("generate-enemy").addEventListener("click",generateEnemy);
 
+ 
 //Del 3
 document.getElementById("start-fight").addEventListener("click", function(){
 
@@ -141,4 +155,4 @@ document.getElementById("start-fight").addEventListener("click", function(){
 
     
 
-});
+});  
