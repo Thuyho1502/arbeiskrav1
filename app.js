@@ -1,5 +1,5 @@
 
- //Del 1:
+  /* //Del 1:
 //1. Opprett en karakter
 const nameCharacter = document.getElementById("character-name");
 const hpCharacter = document.getElementById("character-hp");
@@ -18,7 +18,7 @@ profileImages.forEach(img => {
     profileImages.forEach(img =>{
         img.style.border = img.src === imageSrc ? "3px solid red" : "3px solid yellow";
        });
-}  
+}   
  
 //Lagre karakteren
 function createCharacter(name, hp, attack, image) {
@@ -29,10 +29,10 @@ function createCharacter(name, hp, attack, image) {
         image: image || "assets/dragon.jpg"
     };
 }
-//module.exports = {createCharacter} ;
+module.exports = {createCharacter} ;
 
 
-const createButton = document.getElementById("create-character");
+ const createButton = document.getElementById("create-character");
 createButton.addEventListener("click",()=>{
         if(!nameCharacter.value.trim()){
         alert("Skriv et navn for din karakter!");
@@ -50,7 +50,7 @@ createButton.addEventListener("click",()=>{
     alert(`Karakter ${character.name}er opprettet med ${character.hp} HP og ${character.attack} angrep!`);
 }); 
   
-
+ 
 //Del 2
 // Funksjon for å generere en tilfeldig fiende
 function generateEnemy() {
@@ -91,9 +91,9 @@ function generateEnemy() {
    
 }
 
-document.getElementById("generate-enemy").addEventListener("click",generateEnemy);
-//module.exports = {generateEnemy};
-
+//document.getElementById("generate-enemy").addEventListener("click",generateEnemy);
+module.exports = {generateEnemy};
+*/
 //Del 3
 document.getElementById("start-fight").addEventListener("click", function(){
 
@@ -153,6 +153,7 @@ document.getElementById("start-fight").addEventListener("click", function(){
     `;
     document.getElementById("battle-area").appendChild(enemyDisplay);
 
-    //module.exports = { startFight, getCharacter, getEnemy };
+    module.exports = { startFight, getCharacter, getEnemy };
 
 });    
+  

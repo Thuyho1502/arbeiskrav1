@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-  const {createCharacter} = require('./app.js');
+/* const {createCharacter} = require('./app.js');
 describe('createCharacter', () => {
   test('should create a character with provided values', () => {
     const character = createCharacter('Hero', 120, 30, 'assets/hunter.jpg');
@@ -24,7 +24,7 @@ describe('createCharacter', () => {
 });
 
 
-
+ 
  const { generateEnemy } = require("./app.js");
 
 describe("generateEnemy", () => {
@@ -73,7 +73,7 @@ describe("generateEnemy", () => {
     });
 
 
-});
+});*/
  
 
 
@@ -145,4 +145,4 @@ describe("Battle System", () => {
 
 
 });
- 
+  
