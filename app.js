@@ -19,7 +19,7 @@ profileImages.forEach(img => {
         img.style.border = img.src === imageSrc ? "3px solid red" : "3px solid yellow";
        });
 }  
-
+ 
 //Lagre karakteren
 function createCharacter(name, hp, attack, image) {
     return {
@@ -49,7 +49,7 @@ createButton.addEventListener("click",()=>{
     console.log("Karakter opprettet:", character);
     alert(`Karakter ${character.name}er opprettet med ${character.hp} HP og ${character.attack} angrep!`);
 }); 
- 
+  
 
 //Del 2
 // Funksjon for å generere en tilfeldig fiende
@@ -88,12 +88,12 @@ function generateEnemy() {
     document.getElementById("enemy-name").textContent = `Navn:${enemy.name}`;
     document.getElementById("enemy-hp").textContent= `HP:${enemy.hp}`;
     document.getElementById("enemy-attack").textContent = `Angrep: ${enemy.attack}`;
-    module.exports = {generateEnemy};
+   
 }
 
 document.getElementById("generate-enemy").addEventListener("click",generateEnemy);
+//module.exports = {generateEnemy};
 
- 
 //Del 3
 document.getElementById("start-fight").addEventListener("click", function(){
 
@@ -153,6 +153,6 @@ document.getElementById("start-fight").addEventListener("click", function(){
     `;
     document.getElementById("battle-area").appendChild(enemyDisplay);
 
-    
+    //module.exports = { startFight, getCharacter, getEnemy };
 
-});  
+});    
